@@ -10,8 +10,8 @@
     <select id="mySelect" onchange="showText()">
         <option value="">-- Choose an option --</option>
         <option value="html">HTML</option>
-        <option value="js">JavaScript</option>
-        <option value="python">Python</option>
+        <option value="css">CSS</option>
+        <option value="java">Java</option>
     </select>
 
     <p id="result"></p>
@@ -22,11 +22,13 @@
             let text = "";
 
             if (choice === "html") {
-                text = "HTML is used to create web page structure.";
-            } else if (choice === "js") {
-                text = "JavaScript adds interactivity to web pages.";
-            } else if (choice === "python") {
-                text = "Python is a popular programming language.";
+                text = "HTML is used to create the structure of web pages.";
+            } 
+            else if (choice === "css") {
+                text = "CSS is used to style web pages and make them attractive.";
+            } 
+            else if (choice === "java") {
+                text = "Java is a powerful programming language used for web, mobile, and software development.";
             }
 
             document.getElementById("result").innerHTML = text;
