@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Show/Hide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #content {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <label>
+        <input type="checkbox" id="toggleCheckbox">
+        Show Content
+    </label>
+
+    <div id="content">
+        <h3>Hidden Content</h3>
+        <p>This content is displayed when the checkbox is checked.</p>
+    </div>
+
+    <script>
+        const checkbox = document.getElementById("toggleCheckbox");
+        const content = document.getElementById("content");
+
+        checkbox.addEventListener("change", function () {
+            if (this.checked) {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
