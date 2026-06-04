@@ -1,52 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Counter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        #count {
-            font-size: 40px;
-            margin: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            margin: 5px;
-        }
-    </style>
+    <title>Dropdown Example</title>
 </head>
 <body>
 
-    <h1>Counter App</h1>
+    <h2>Select a Topic</h2>
 
-    <div id="count">0</div>
+    <select id="mySelect" onchange="showText()">
+        <option value="">-- Choose an option --</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+    </select>
 
-    <button onclick="decrease()">-</button>
-    <button onclick="increase()">+</button>
-    <button onclick="resetCounter()">Reset</button>
+    <p id="result"></p>
 
     <script>
-        let count = 0;
+        function showText() {
+            let choice = document.getElementById("mySelect").value;
+            let text = "";
 
-        function increase() {
-            count++;
-            document.getElementById("count").textContent = count;
-        }
+            if (choice === "html") {
+                text = "HTML is used to create the structure of web pages.";
+            } 
+            else if (choice === "css") {
+                text = "CSS is used to style web pages and make them attractive.";
+            } 
+            else if (choice === "javascript") {
+                text = "JavaScript is used to add interactivity and dynamic behavior to web pages.";
+            }
 
-        function decrease() {
-            count--;
-            document.getElementById("count").textContent = count;
-        }
-
-        function resetCounter() {
-            count = 0;
-            document.getElementById("count").textContent = count;
+            document.getElementById("result").innerHTML = text;
         }
     </script>
 
