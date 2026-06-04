@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple HTML Example</title>
+</head>
+<body>
+
+    <h1>Welcome</h1>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="showMessage()">Submit</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showMessage() {
+            const name = document.getElementById("nameInput").value;
+
+            if (name === "") {
+                document.getElementById("result").innerText =
+                    "Please enter your name.";
+            } else {
+                document.getElementById("result").innerText =
+                    "Hello, " + name + "!";
+            }
+        }
+    </script>
+
+</body>
+</html>
