@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Calculator</title>
+    <title>Simple Counter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -9,69 +9,44 @@
             margin-top: 50px;
         }
 
-        input {
-            padding: 8px;
-            margin: 5px;
-            width: 100px;
+        #count {
+            font-size: 40px;
+            margin: 20px;
         }
 
         button {
-            padding: 10px 15px;
+            padding: 10px 20px;
+            font-size: 18px;
             margin: 5px;
-        }
-
-        #result {
-            font-size: 24px;
-            margin-top: 20px;
-            color: blue;
         }
     </style>
 </head>
 <body>
 
-    <h2>Simple Calculator</h2>
+    <h1>Counter App</h1>
 
-    <input type="number" id="num1" placeholder="Number 1">
-    <input type="number" id="num2" placeholder="Number 2">
+    <div id="count">0</div>
 
-    <br><br>
-
-    <button onclick="calculate('+')">Add</button>
-    <button onclick="calculate('-')">Subtract</button>
-    <button onclick="calculate('*')">Multiply</button>
-    <button onclick="calculate('/')">Divide</button>
-
-    <div id="result">Result: </div>
+    <button onclick="decrease()">-</button>
+    <button onclick="increase()">+</button>
+    <button onclick="resetCounter()">Reset</button>
 
     <script>
-        function calculate(operator) {
-            let num1 = parseFloat(document.getElementById("num1").value);
-            let num2 = parseFloat(document.getElementById("num2").value);
-            let result;
+        let count = 0;
 
-            if (isNaN(num1) || isNaN(num2)) {
-                document.getElementById("result").innerHTML =
-                    "Result: Please enter valid numbers";
-                return;
-            }
+        function increase() {
+            count++;
+            document.getElementById("count").textContent = count;
+        }
 
-            switch (operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                    result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
-                    break;
-            }
+        function decrease() {
+            count--;
+            document.getElementById("count").textContent = count;
+        }
 
-            document.getElementById("result").innerHTML =
-                "Result: " + result;
+        function resetCounter() {
+            count = 0;
+            document.getElementById("count").textContent = count;
         }
     </script>
 
